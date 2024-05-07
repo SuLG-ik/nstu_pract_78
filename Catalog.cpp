@@ -1,10 +1,10 @@
 #include "Catalog.h"
 
 void Catalog::addSmartphone(string model, double price, string manufacturer, string color, string display, string ram,
-                            string storage, string cpu, string os) {
+                            string storage, string cpu, string os, int manufactureYear, int cameraCount) {
     smartphones.push_back(Smartphone{model, price, manufacturer,
                                      color, display, ram,
-                                     storage, cpu, os});
+                                     storage, cpu, os, manufactureYear, cameraCount});
 }
 
 Smartphone Catalog::getSmartphone(string model) {
@@ -16,15 +16,8 @@ Smartphone Catalog::getSmartphone(string model) {
 
 Smartphone Catalog::search(const Smartphone &searchSmartphone) {
     for (Smartphone s: smartphones) {
-        string model = searchSmartphone.getModel();
-        if (!model.empty() && model != s.getModel()) continue;
-        string manufacturer = searchSmartphone.getManufacturer();
-        if (!manufacturer.empty() && manufacturer != s.getManufacturer())
-            continue;
-        // Пропущены фрагменты кода по проверке значений полей:
-        // color, display, ram, storage, cpu, os.
-        // Проверка реализована аналогичным образом
-        return s;
+        if (searchSmartphone.similar(s))
+            return s;
     }
     return Smartphone();
 }

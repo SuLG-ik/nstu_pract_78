@@ -7,4 +7,6 @@ add_executable(untitled25 main.cpp
         Smartphone.h
         Smartphone.cpp
         Catalog.h
-        Catalog.cpp)
+        Catalog.cpp
+        utils.cpp
+        utils.h)

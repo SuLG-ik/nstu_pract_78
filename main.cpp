@@ -7,27 +7,14 @@ using namespace std;
 Catalog InitializeCatalog() {
     Catalog catalog;
     catalog.addSmartphone("iPhone 12 Pro", 100, "Apple", "White",
-                          "6", "3", "64", "Apple", "iOS");
+                          "6", "3", "64", "Apple", "iOS", 2019, 3);
     return catalog;
 }
 
-int main(int argc, char *argv[]) {
+int main() {
     Catalog catalog = InitializeCatalog();
-    Smartphone whatBuyerLikes{"iPhone 12 Pro", 0, "apple", "white",
-                              "", "", "", "", "ios"};
+    Smartphone whatBuyerLikes{"iPhone 12 Pro"};
     Smartphone smartphone = catalog.search(whatBuyerLikes);
-    if (smartphone.getModel() != "") {
-        cout << "You might like this: ";
-        cout << smartphone.getManufacturer() << " ";
-        cout << smartphone.getModel() << endl;
-        cout << "Price: " << smartphone.getPrice() << endl;
-        cout << "Color: " << smartphone.getColor() << endl;
-        cout << "Display: " << smartphone.getDisplay() << endl;
-        cout << "OS: " << smartphone.getOS() << endl;
-        cout << smartphone.getRAM() << "Gb RAM, " << smartphone.getStorage()
-             << " GB storage" << endl;
-        cout << "CPU: " << smartphone.getCPU() << endl;
-
-    } else cout << "Sorry, we have nothing for you.";
+    smartphone.print();
     return 0;
 }
