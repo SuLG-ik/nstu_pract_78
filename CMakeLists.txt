@@ -9,4 +9,11 @@ add_executable(untitled25 main.cpp
         Catalog.h
         Catalog.cpp
         utils.cpp
-        utils.h)
+        utils.h
+        Params.cpp
+        Params.h
+        Money.cpp
+        Money.h
+        MoneyUnit.cpp
+        MoneyUnit.h
+)

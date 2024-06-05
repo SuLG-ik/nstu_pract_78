@@ -1,23 +1,23 @@
 #include "Catalog.h"
+#include "utils.h"
 
-void Catalog::addSmartphone(string model, double price, string manufacturer, string color, string display, string ram,
-                            string storage, string cpu, string os, int manufactureYear, int cameraCount) {
-    smartphones.push_back(Smartphone{model, price, manufacturer,
-                                     color, display, ram,
-                                     storage, cpu, os, manufactureYear, cameraCount});
+void Catalog::addSmartphone(const Smartphone &smartphone) {
+    smartphones.push_back(smartphone);
 }
 
 Smartphone Catalog::getSmartphone(string model) {
     for (Smartphone s: smartphones) {
-        if (s.getModel() == model) return s;
+        if (FirstEmptyOrEquals(s.getModel(), model))
+            return s;
     }
     return Smartphone();
 }
 
-Smartphone Catalog::search(const Smartphone &searchSmartphone) {
-    for (Smartphone s: smartphones) {
-        if (searchSmartphone.similar(s))
-            return s;
+vector<Smartphone> Catalog::search(const Smartphone &searchSmartphone) {
+    vector<Smartphone> result;
+    for (const Smartphone &s: smartphones) {
+        if (searchSmartphone.Similar(s))
+            result.push_back(s);
     }
-    return Smartphone();
+    return result;
 }

@@ -1,45 +1,50 @@
 #pragma once
 
 #include <string>
+#include <ostream>
+#include "Params.h"
+#include "Money.h"
+
 
 using namespace std;
 
 class Smartphone {
 private:
-    string model, manufacturer, color, display, ram, storage, cpu, os;
-    int manufactureYear, cameraCount;
-    double price;
+    string model;
+    Manufacturer manufacturer;
+    Color color;
+    float displaySize;
+    int ram, storage;
+    CPU cpu;
+    OS os;
+    Money price;
 public:
-    Smartphone(string model = "", double price = 0, string manufacturer = "", string color = "", string display = "",
-               string ram = "",
-               string storage = "", string cpu = "", string os = "", int manufactureYear = 0, int cameraCount = 0);
+    Smartphone(const string &model = "", Manufacturer manufacturer = Manufacturer::UNDEFINED,
+               Color color = Color::UNDEFINED, float displaySize = 0, int ram = 0,
+               int storage = 0,
+               CPU cpu = CPU::UNDEFINED, OS os = OS::UNDEFINED, const Money &price = Money());
 
+    const string &getModel() const;
 
-    int getManufactureYear() const;
+    Manufacturer getManufacturer() const;
 
-    int getCameraCount() const;
+    Color getColor() const;
 
-    string getModel() const;
+    float getDisplay() const;
 
-    string getManufacturer() const;
+    int getRAM() const;
 
-    string getColor() const;
+    int getStorage() const;
 
-    string getDisplay() const;
+    CPU getCPU() const;
 
-    string getRAM() const;
+    OS getOS() const;
 
-    string getStorage() const;
+    bool Similar(const Smartphone &smartphone) const;
 
-    string getCPU() const;
+    friend ostream &operator<<(ostream &os, const Smartphone &smartphone);
 
-    string getOS() const;
+    const Money &getPrice() const;
 
-    double getPrice() const;
-
-    void setPrice(double price);
-
-    bool similar(Smartphone smartphone) const;
-
-    void print() const;
+    void setPrice(const Money &price);
 };

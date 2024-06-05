@@ -6,4 +6,8 @@
 
 #include <iostream>
 
-bool firstEmptyOrEquals(const std::string& first, const std::string& second);
+bool FirstEmptyOrEquals(const std::string &first, const std::string &second);
+
+bool FirstZeroOrEquals(double first, double second);
+
+bool FirstZeroOrEquals(int first, int second);

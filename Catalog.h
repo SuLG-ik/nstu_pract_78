@@ -5,16 +5,13 @@
 #include<list>
 #include "Smartphone.h"
 
-using namespace std;
-
 class Catalog {
 private:
     std::list<Smartphone> smartphones;
 public:
-    void addSmartphone(string model, double price, string manufacturer, string color, string display, string ram,
-                       string storage, string cpu, string os, int manufactureYear, int cameraCount);
+    void addSmartphone(const Smartphone &smartphone);
 
     Smartphone getSmartphone(string model);
 
-    Smartphone search(const Smartphone &searchSmartphone);
+    vector<Smartphone> search(const Smartphone &searchSmartphone);
 };
