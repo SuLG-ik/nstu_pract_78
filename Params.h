@@ -15,11 +15,11 @@ enum class Color {
 };
 
 enum class OS {
-    ANDROID, IOS, Avrora, UNDEFINED
+    WINDOWS, MACOS, LINUX, UNDEFINED
 };
 
 enum class CPU {
-    SNAPDRAGON, APPLE, Mediatek, UNDEFINED
+    SNAPDRAGON, APPLE, Intel, AMD, UNDEFINED
 };
 
 std::string ToString(CPU cpu);

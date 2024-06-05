@@ -3,15 +3,15 @@
 
 #include <string>
 #include<list>
-#include "Smartphone.h"
+#include "Laptop.h"
 
 class Catalog {
 private:
-    std::list<Smartphone> smartphones;
+    std::list<Laptop> laptops;
 public:
-    void addSmartphone(const Smartphone &smartphone);
+    void addLaptop(const Laptop &laptop);
 
-    Smartphone getSmartphone(string model);
+    Laptop getLaptop(string model);
 
-    vector<Smartphone> search(const Smartphone &searchSmartphone);
+    vector<Laptop> search(const LaptopSpec &searchLaptops);
 };

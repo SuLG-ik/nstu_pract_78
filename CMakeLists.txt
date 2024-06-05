@@ -4,8 +4,8 @@ project(untitled25)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(untitled25 main.cpp
-        Smartphone.h
-        Smartphone.cpp
+        Laptop.h
+        Laptop.cpp
         Catalog.h
         Catalog.cpp
         utils.cpp
@@ -16,4 +16,6 @@ add_executable(untitled25 main.cpp
         Money.h
         MoneyUnit.cpp
         MoneyUnit.h
+        LaptopSpec.cpp
+        LaptopSpec.h
 )

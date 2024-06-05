@@ -34,22 +34,24 @@ std::string ToString(CPU cpu) {
             return "Apple";
         case CPU::UNDEFINED:
             return "undefined";
-        case CPU::Mediatek:
-            return "Mediatek";
+        case CPU::Intel:
+            return "Intel";
+        case CPU::AMD:
+            return "AMD";
     }
     throw std::runtime_error("No such CPU ToString declaration");
 }
 
 std::string ToString(OS os) {
     switch (os) {
-        case OS::ANDROID:
-            return "Android";
-        case OS::IOS:
-            return "IOS";
+        case OS::WINDOWS:
+            return "Windows";
+        case OS::MACOS:
+            return "MacOS";
         case OS::UNDEFINED:
             return "undefined";
-        case OS::Avrora:
-            return "Avrora";
+        case OS::LINUX:
+            return "Linux";
     }
     throw std::runtime_error("No such OS ToString declaration");
 }
